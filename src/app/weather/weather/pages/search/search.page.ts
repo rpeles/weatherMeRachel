@@ -1,4 +1,4 @@
-import { Component, effect, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
 import {
   Forecast,
   WeatherStatus,
@@ -9,6 +9,7 @@ import { CurrentWeather } from '../../../../shared/models/currentWeather.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoaderService } from '../../../../core/services/loader.service';
 import { catchError, finalize, of } from 'rxjs';
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-search',
@@ -22,6 +23,7 @@ export class SearchPage implements OnInit {
 
   weatherStatus: WeatherStatus = 'noData';
   isLoading = false;
+  destroy = inject(DestroyRef);
 
   constructor(
     private weatherService: WeatherService,
@@ -40,6 +42,11 @@ export class SearchPage implements OnInit {
         this.isLoading = loaderState;
       });
     });
+
+    this.weatherService.temperatureUnitChanged.pipe(takeUntilDestroyed(this.destroy))
+      .subscribe(() => {
+      this.getWeatherData();
+    })
   }
 
   retry() {
