@@ -1,0 +1,20 @@
+.outfit-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.outfit-card {
+  max-width: 640px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333333;
+
+  @media (max-width: 850px) {
+    max-width: 380px;
+  }
+}
+

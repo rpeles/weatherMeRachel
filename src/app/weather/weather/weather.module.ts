@@ -10,9 +10,15 @@ import { SearchInputComponent } from './pages/search-input/search-input.componen
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DatePipe } from '@angular/common';
+import { WeatherOutfitWidgetComponent } from "./pages/weather-outfit-widget/weather-outfit-widget.component";
 
 @NgModule({
-  declarations: [SearchPage, SearchInputComponent, WeatherComponent],
+  declarations: [
+    SearchPage,
+    SearchInputComponent,
+    WeatherComponent,
+    WeatherOutfitWidgetComponent
+  ],
   imports: [
     CoreModule,
     WeatherRoutingModule,

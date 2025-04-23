@@ -24,3 +24,9 @@
   </div>
   }
 }
+
+@if(!isLoading && weatherStatus === 'success') {
+  <weather-outfit-widget
+    [currentWeather]="currentWeatherSignal()"
+  ></weather-outfit-widget>
+}
