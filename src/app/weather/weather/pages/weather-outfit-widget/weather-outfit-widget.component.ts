@@ -20,8 +20,8 @@ export class WeatherOutfitWidgetComponent implements OnChanges {
 
 
   ngOnChanges(): void {
-    const temperature = this.currentWeather.Temperature?.Metric?.Value.valueOf();
-    const condition = this.currentWeather.WeatherText;
+    const temperature = this.currentWeather?.Temperature?.Metric?.Value.valueOf();
+    const condition = this.currentWeather?.WeatherText;
     const city = this.locationService.selectedCity?.LocalizedName;
     if (temperature !== undefined && condition && city) {
       this.fetchOutfitSuggestion(temperature, condition, city);
