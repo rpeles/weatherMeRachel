@@ -1,0 +1,26 @@
+<search-input></search-input>
+@if (isLoading) {
+<div class="status-message">
+  <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  <p>Loading weather data...</p>
+</div>
+}
+@switch (weatherStatus) {
+  @case ('noData') {
+  <div class="status-message">
+    <p>Please select a location to view the weather forecast.</p>
+  </div>
+  } @case ('success') {
+  <weather-card
+    [forecastData]="forecastSignal()"
+    [currentWeather]="currentWeatherSignal()"
+    [location]="locationService.selectedCity?.LocalizedName"
+  >
+  </weather-card>
+  } @case ('error') {
+  <div class="status-message">
+    <p>Error loading weather data. Please try again.</p>
+    <button mat-raised-button color="primary" (click)="retry()">Retry</button>
+  </div>
+  }
+}

@@ -1,0 +1,62 @@
+.weather-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+
+  @media (max-width: 850px) {
+    max-width: 380px;
+  }
+}
+
+.weather-card-header {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-temperature {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.additional-info {
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+}
+
+.forecast-container {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px;
+}
+
+.forecast-card {
+  width: 200px;
+  text-align: center;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+
+.icon img {
+  height: 60px;
+}

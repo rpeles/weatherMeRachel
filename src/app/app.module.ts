@@ -6,12 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { WeatherModule } from './weather/weather/weather.module';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatIcon } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     SharedModule,
@@ -19,7 +18,9 @@ import { WeatherModule } from './weather/weather/weather.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatIcon,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [provideAnimationsAsync()],
 })
-export class AppModule { }
+export class AppModule {}

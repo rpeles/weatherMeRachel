@@ -1,0 +1,45 @@
+host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-input {
+  width: 100%;
+  max-width: 500px;
+  margin: 16px auto;
+
+  @media (max-width: 800px) {
+    max-width: 380px;
+  }
+}
+
+.custom-input .mat-form-field-outline {
+  border-color: #1976d2;
+}
+
+.custom-input .mat-form-field-outline-thick {
+  border-width: 2px;
+}
+
+.custom-input .mat-form-field-label {
+  color: #1976d2;
+}
+
+.custom-input .mat-input-element {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.custom-input .mat-icon {
+  color: #1976d2;
+}
+
+.warning-message {
+  margin-bottom: 4px;
+  color: #f44336;
+  font-size: 12px;
+  font-weight: 500;
+}

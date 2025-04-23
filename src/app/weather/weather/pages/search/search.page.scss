@@ -1,0 +1,15 @@
+host {
+  width: 100%;
+}
+
+.status-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+mat-progress-spinner {
+  margin-bottom: 1rem;
+}

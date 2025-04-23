@@ -1,0 +1,38 @@
+<mat-form-field appearance="outline" class="custom-input">
+  <mat-label>
+    @if (isNotEnglishLetter) {
+      <div class="warning-message">
+        <mat-error> Please enter English letters only.</mat-error>
+      </div>
+    } @else {
+      <p>Enter City</p>
+    }
+  </mat-label>
+  <input
+    matInput
+    [formControl]="searchControl"
+    [matAutocomplete]="auto"
+    placeholder="Enter city name"
+    (keydown)="onKeydown($event)"
+    (paste)="onPaste($event)"
+  />
+  <mat-icon matSuffix>location_on</mat-icon>
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (optionSelected)="onSelectCity($event.option.value)"
+  >
+    @for (city of filteredCities; track city) {
+      <mat-option [value]="city.LocalizedName">
+        {{ city.LocalizedName }}, {{ city.Country.LocalizedName }}
+        <button
+          mat-icon-button
+          (click)="toggleFavorite(city, $event); $event.stopPropagation()"
+        >
+          <mat-icon color="primary">
+            {{ city?.isFavorite ? "favorite" : "favorite_border" }}
+          </mat-icon>
+        </button>
+      </mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>

@@ -22,9 +22,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatSlideToggleModule,
   ],
   exports: [
-    MatIconModule, 
-    MatButtonModule, 
-    MatAutocompleteModule, 
+    MatIconModule,
+    MatButtonModule,
+    MatAutocompleteModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
@@ -32,4 +32,4 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatSlideToggleModule,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

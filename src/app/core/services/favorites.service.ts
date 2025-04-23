@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Location } from 'src/app/shared/models/location.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FavoritesService {
   private favorites: Location[] = [];
@@ -12,7 +12,9 @@ export class FavoritesService {
   }
 
   removeFromFavorites(locationKey: string): void {
-    const cityToRemoveIndex = this.favorites.findIndex((favorite) => favorite.Key === locationKey);
+    const cityToRemoveIndex = this.favorites.findIndex(
+      (favorite) => favorite.Key === locationKey,
+    );
     this.favorites.splice(cityToRemoveIndex, 1);
   }
 

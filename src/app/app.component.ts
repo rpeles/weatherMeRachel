@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './core/services/loader.service';
 import { WeatherService } from './core/services/weather.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +10,11 @@ import { WeatherService } from './core/services/weather.service';
 })
 export class AppComponent implements OnInit {
   displayLoading = false;
-    
-  constructor(private loaderService: LoaderService, private weatherService: WeatherService) {}
+
+  constructor(
+    private loaderService: LoaderService,
+    private weatherService: WeatherService,
+  ) {}
 
   ngOnInit() {
     this.loaderService.stateChange.subscribe((loaderState) => {
